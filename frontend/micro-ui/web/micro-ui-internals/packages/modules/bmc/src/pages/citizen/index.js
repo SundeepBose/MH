@@ -10,8 +10,8 @@ const App = () => {
   const { path, url, ...match } = useRouteMatch();
   const location = useLocation();
 
-  const CreateComplaint = Digit?.ComponentRegistryService?.getComponent("BMCCreate");
-
+  const CreateApplication = Digit?.ComponentRegistryService?.getComponent("BMCCreate");
+  const BMCHome = Digit?.ComponentRegistryService?.getComponent("BMCHome");
 
   return (
     <React.Fragment>
@@ -19,8 +19,8 @@ const App = () => {
         {!location.pathname.includes("/response") && <BackButton>{t("CS_COMMON_BACK")}</BackButton>}
         <Switch>
           {/* <AppContainer> */}
-          <PrivateRoute path={`${path}/create-abc/anc`} component={CreateComplaint} />
-
+          <PrivateRoute path={`${path}application/create`} component={CreateApplication} />
+          <PrivateRoute path={`${path}/home`} component={CreateApplication} />
 
           {/* </AppContainer> */}
         </Switch>

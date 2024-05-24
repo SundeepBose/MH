@@ -338,7 +338,7 @@ const Home = ({
               "code": "pg.citye"
           }
       ]
-  },
+    },
     {
         "module": "TL",
         "code": "TL",

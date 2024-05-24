@@ -7,6 +7,7 @@ import {
   PTIcon,
   CaseIcon,
   DropIcon,
+  PersonIcon,
   HomeIcon,
   Calender,
   DocumentIcon,
@@ -82,11 +83,11 @@ const Home = () => {
         Icon: <CaseIcon className="fill-path-primary-main" />,
         onClick: () => history.push(citizenServicesObj?.props?.[2]?.navigationUrl),
       },
-      // {
-      //     name: t("ACTION_TEST_WATER_AND_SEWERAGE"),
-      //     Icon: <DropIcon/>,
-      //     onClick: () => history.push("/digit-ui/citizen")
-      // },
+      {
+          name: t("Citizen Scheems"),
+          Icon: <PersonIcon/>,
+          onClick: () => history.push("/digit-ui/citizen/bmc/home")
+      },
       {
         name: t(citizenServicesObj?.props?.[3]?.label),
         Icon: <WSICon />,

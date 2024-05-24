@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import getRootReducer from "./redux/reducers";
 import CitizenApp from "./pages/citizen";
 import Create from "./pages/citizen/create";
-
+import BMCHome from "./pages/citizen/home";
 
 
 
@@ -41,6 +41,7 @@ const BMCLinks = ({ matchPath }) => {
 
 const componentsToRegister = {
   BMCCreate:Create,
+  BMCHome,
   BMCModule,
   BMCLinks,
 };
