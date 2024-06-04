@@ -6,7 +6,7 @@ const Create = () => {
   return (
     <React.Fragment>
       <div className="bmc-citizen-wrapper">
-<span>Hello World</span>
+<span><i class="fas fa-envelope"></i>Hello World</span>
       </div>
     </React.Fragment>
   );

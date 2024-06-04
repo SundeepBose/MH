@@ -18,8 +18,6 @@ import {
 } from "@upyog/digit-ui-react-components";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
-import { CitizenSideBar } from "../../../components/TopBarSideBar/SideBar/CitizenSideBar";
-import StaticCitizenSideBar from "../../../components/TopBarSideBar/SideBar/StaticCitizenSideBar";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -27,8 +25,8 @@ const Home = () => {
   const tenantId = Digit.ULBService.getCitizenCurrentTenant(true);
   const { data: { stateInfo, uiHomePage } = {}, isLoading } = Digit.Hooks.useStore.getInitData();
   let isMobile = window.Digit.Utils.browser.isMobile();
-  if(window.Digit.SessionStorage.get("TL_CREATE_TRADE")) window.Digit.SessionStorage.set("TL_CREATE_TRADE",{})
-   
+  if (window.Digit.SessionStorage.get("TL_CREATE_TRADE")) window.Digit.SessionStorage.set("TL_CREATE_TRADE", {})
+
   const conditionsToDisableNotificationCountTrigger = () => {
     if (Digit.UserService?.getUser()?.info?.type === "EMPLOYEE") return false;
     if (!Digit.UserService?.getUser()?.access_token) return false;
@@ -84,9 +82,9 @@ const Home = () => {
         onClick: () => history.push(citizenServicesObj?.props?.[2]?.navigationUrl),
       },
       {
-          name: t("Citizen Scheems"),
-          Icon: <PersonIcon/>,
-          onClick: () => history.push("/digit-ui/citizen/bmc/home")
+        name: t("Citizen Scheems"),
+        Icon: <PersonIcon />,
+        onClick: () => history.push("/digit-ui/citizen/bmc/home")
       },
       {
         name: t(citizenServicesObj?.props?.[3]?.label),
@@ -130,17 +128,17 @@ const Home = () => {
     ],
     styles: { display: "flex", flexWrap: "wrap", justifyContent: "flex-start", width: "100%" },
   };
-  sessionStorage.removeItem("type" );
+  sessionStorage.removeItem("type");
   sessionStorage.removeItem("pincode");
   sessionStorage.removeItem("tenantId");
   sessionStorage.removeItem("localityCode");
-  sessionStorage.removeItem("landmark"); 
+  sessionStorage.removeItem("landmark");
   sessionStorage.removeItem("propertyid");
 
   return isLoading ? (
     <Loader />
   ) : (
-    <div className="HomePageContainer" style={{width:"100%"}}>
+    <div className="HomePageContainer" style={{ width: "100%" }}>
       {/* <div className="SideBarStatic">
         <StaticCitizenSideBar />
       </div> */}
@@ -151,18 +149,18 @@ const Home = () => {
             <StandaloneSearchBar placeholder={t("CS_COMMON_SEARCH_PLACEHOLDER")} />
           </div> */}
           <div className="ServicesSection">
-          <CardBasedOptions style={{marginTop:"-30px"}} {...allCitizenServicesProps} />
-          <CardBasedOptions style={isMobile ? {marginTop:"-30px"} : {marginTop:"-30px"}} {...allInfoAndUpdatesProps} />
-        </div>
+            <CardBasedOptions style={{ marginTop: "-30px" }} {...allCitizenServicesProps} />
+            <CardBasedOptions style={isMobile ? { marginTop: "-30px" } : { marginTop: "-30px" }} {...allInfoAndUpdatesProps} />
+          </div>
         </div>}
 
 
         {(whatsAppBannerMobObj || whatsAppBannerWebObj) && (
           <div className="WhatsAppBanner">
             {isMobile ? (
-              <img src={"https://nugp-assets.s3.ap-south-1.amazonaws.com/nugp+asset/Banner+UPYOG+%281920x500%29B+%282%29.jpg"} onClick={() => handleClickOnWhatsAppBanner(whatsAppBannerMobObj)} style={{"width":"100%"}}/>
+              <img src={"https://nugp-assets.s3.ap-south-1.amazonaws.com/nugp+asset/Banner+UPYOG+%281920x500%29B+%282%29.jpg"} onClick={() => handleClickOnWhatsAppBanner(whatsAppBannerMobObj)} style={{ "width": "100%" }} />
             ) : (
-              <img src={"https://nugp-assets.s3.ap-south-1.amazonaws.com/nugp+asset/Banner+UPYOG+%281920x500%29B+%282%29.jpg"} onClick={() => handleClickOnWhatsAppBanner(whatsAppBannerWebObj)} style={{"width":"100%"}}/>
+              <img src={"https://nugp-assets.s3.ap-south-1.amazonaws.com/nugp+asset/Banner+UPYOG+%281920x500%29B+%282%29.jpg"} onClick={() => handleClickOnWhatsAppBanner(whatsAppBannerWebObj)} style={{ "width": "100%" }} />
             )}
           </div>
         )}

@@ -45,7 +45,7 @@ const Home = () => {
             </div>
             <div className="full-width-card" Style="padding:0px 10px 0px 10px;">
                 <div className="BMC_Bottom" Style="width:96%;">
-                    <Link to={`${path}application/create`}>
+                    <Link to={`${path}/application/create`}>
                         <LinkButton label={t("Next")} />
                     </Link>
                 </div>

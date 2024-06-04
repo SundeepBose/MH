@@ -10,7 +10,7 @@ const App = () => {
   const { path, url, ...match } = useRouteMatch();
   const location = useLocation();
 
-  const CreateApplication = Digit?.ComponentRegistryService?.getComponent("BMCCreate");
+  const  CreateApplication = Digit?.ComponentRegistryService?.getComponent("BMCCreate");
   const BMCHome = Digit?.ComponentRegistryService?.getComponent("BMCHome");
 
   return (
@@ -19,8 +19,8 @@ const App = () => {
         {!location.pathname.includes("/response") && <BackButton>{t("CS_COMMON_BACK")}</BackButton>}
         <Switch>
           {/* <AppContainer> */}
-          <PrivateRoute path={`${path}application/create`} component={CreateApplication} />
-          <PrivateRoute path={`${path}/home`} component={CreateApplication} />
+          <PrivateRoute path={`${path}/home/application/create`} component={CreateApplication} />
+          <PrivateRoute path={`${path}/home`} component={BMCHome} />
 
           {/* </AppContainer> */}
         </Switch>
