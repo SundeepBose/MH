@@ -4,19 +4,20 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  // mode: 'development',
+  mode: 'development',
   entry: "./src/index.js",
   devtool: "none",
   module: {
     rules: [
       {
         test: /\.(js)$/,
+        exclude: /node_modules/,
         use: ["babel-loader"],
       },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
-      }
+      },
     ],
   },
   output: {
@@ -27,12 +28,12 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: 'all',
-      minSize:20000,
-      maxSize:50000,
-      enforceSizeThreshold:50000,
-      minChunks:1,
-      maxAsyncRequests:30,
-      maxInitialRequests:30
+      minSize: 20000,
+      maxSize: 50000,
+      enforceSizeThreshold: 50000,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
     },
   },
   plugins: [
