@@ -30,5 +30,6 @@ CREATE TABLE IF NOT EXISTS eg_bmc_usersubschememapping
   
 );  
 
+ALTER TABLE IF EXISTS eg_bmc_usersubschememapping DROP CONSTRAINT IF EXISTS uni_user_ssm;
 ALTER TABLE IF EXISTS eg_bmc_usersubschememapping
-ADD CONSTRAINT IF NOT EXISTS uni_user_ssm UNIQUE (applicationnumber);
+ADD CONSTRAINT  uni_user_ssm UNIQUE (applicationnumber);
