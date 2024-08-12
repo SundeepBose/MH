@@ -1,15 +1,11 @@
 package digit;
 
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.ComponentScan;
-//@Import({ TracerConfiguration.class })
+import lombok.extern.slf4j.Slf4j;
+
 @SpringBootApplication
-@ComponentScan(basePackages = { "digit", "digit.web.controllers" , "digit.config"})
-//@EnableJpaRepositories(basePackages = "digit.repository")
-@EntityScan(basePackages = {"digit.web.models", "digit.bmc.model"})
+@Slf4j
 public class Main {
 
 
