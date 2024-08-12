@@ -44,5 +44,7 @@ COPY --from=build /app/target/*.jar /app/start.sh /opt/egov/
 RUN chmod +x /opt/egov/start.sh
 
 # Set the default command to run the application
-CMD ["/opt/egov/start.sh"]
+#CMD ["/opt/egov/start.sh"]
+CMD ["/bin/bash", "/opt/egov/start.sh"]
+
 
