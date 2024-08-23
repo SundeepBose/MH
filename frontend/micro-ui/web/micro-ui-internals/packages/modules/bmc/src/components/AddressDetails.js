@@ -40,7 +40,7 @@ const AddressDetailCard = ({ onUpdate, initialRows = {}, AllowEdit = false, tena
   const [blocks, setBlocks] = useState([]);
   const [wards, setWards] = useState([]);
 
-  Digit.Hooks.useLocation(tenantId, "Zone", {
+  Digit.Hooks.bmc.useLocation(tenantId, "Zone", {
     select: (data) => {
       const zonesData = [];
       const blocksData = [];

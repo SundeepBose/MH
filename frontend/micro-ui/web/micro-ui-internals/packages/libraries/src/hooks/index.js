@@ -269,10 +269,9 @@ import useCommonGetBank from "./bmc/useCommonGetBank";
 import useSaveUserDetail from "./bmc/useSaveUserDetail";
 import useSaveSchemes from './bmc/saveScheme';
 import useVerifierSchemeDetail from './bmc/useVerifierScheme';
-
 import useSchemesGet from "./bmc/getSchemes";
 import useUsersDetails from "./bmc/useUsers";
-
+import useLocation from './bmc/useLocation';
 import createTokenAPI from "./digiLockerApi/createTokenAPI";
 
 const pgr = {
@@ -541,7 +540,8 @@ const bmc={
   useUsersDetails,
   useSaveUserDetail,
   useSaveSchemes,
-  useVerifierSchemeDetail
+  useVerifierSchemeDetail,
+  useLocation
 };
 
 const Hooks = {
@@ -600,6 +600,7 @@ const Hooks = {
   useCustomMDMS,
   useCustomAPIHook,
   reports,
+  bmc,
   useGetHowItWorksJSON,
   useGetFAQsJSON,
   useGetDSSFAQsJSON,
