@@ -235,7 +235,7 @@ digiLocker:{
   schemes: {
     getSchemes: "/bmc-service-v1/scheme/_search",
     saveScheme: "/bmc-service-v1/application/_save",
-    getVerifierScheme: "http://localhost:8081/bmc/verifier/_getapplications",
+    getVerifierScheme: "/bmc-service-v1/verifier/_getapplications",
   },
 
   users: {
