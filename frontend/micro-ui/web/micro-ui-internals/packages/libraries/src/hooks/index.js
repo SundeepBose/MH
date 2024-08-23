@@ -596,6 +596,7 @@ const Hooks = {
   survey,
   noc,
   ws,
+  bmc,
   useCustomMDMS,
   useCustomAPIHook,
   reports,
